@@ -1,3 +1,7 @@
+
+
+
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/wnCpjX4n)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=21752678&assignment_repo_type=AssignmentRepo)
 # COMP 163: Project 3 - Quest Chronicles
@@ -149,3 +153,41 @@ Test files are provided for your learning but are protected. Modifying test file
 - Academic integrity investigation
 
 You can view tests to understand requirements, but any modifications will be automatically detected.
+
+## Module Architecture
+- main.py: Game entry and menus.
+- character_manager.py: Create, save, load, and manage characters.
+- inventory_system.py: Add/remove/use items, equip/unequip, buy/sell.
+- quest_handler.py: Accept, complete, abandon quests; prerequisites.
+- combat_system.py: Enemy creation and simple turn-based combat.
+- game_data.py: Load and validate `quests.txt` and `items.txt`.
+- custom_exceptions.py: Project exception types.
+
+## Exception Strategy
+- Use specific exceptions from `custom_exceptions.py` for clarity.
+- Examples:
+	- `MissingDataFileError` when data files are not found.
+	- `InvalidDataFormatError` for malformed data files.
+	- `CharacterNotFoundError` for missing save files.
+	- `InventoryFullError`, `ItemNotFoundError`, `InsufficientResourcesError` for inventory/shop issues.
+
+## Design Choices
+- Keep logic simple and testable.
+- Combat uses a basic damage formula and clear class abilities.
+- Parsers validate required fields and numeric values only.
+
+## AI Usage
+- AI used to understand and help with indentation errors, clear confusion in file handling, generate practice problems to study concepts before coding the final version,to better understand Python file I/O and exception handling.
+- Promts: “What are common reasons for a ValueError when splitting a string in Python?”
+“Why might splitting a string with split(': ') fail if the line is empty or missing a colon?”
+
+
+## How to Play 
+
+ Play the game:
+
+```bash
+python main.py
+```
+
+Follow on-screen menus to create/load characters, manage inventory, accept quests, and explore.
