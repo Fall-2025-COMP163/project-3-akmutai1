@@ -136,11 +136,11 @@ def load_character(character_name, save_directory="data/save_games"):
         for line in lines:
             if not line.strip():
                 continue
-            if ": " not in line:
-                # malformed line
+             if ":" not in line:
                 raise InvalidSaveDataError()
-            key, value = line.strip().split(": ", 1)
-            data[key] = value
+
+            key, value = line.strip().split(":", 1)
+            data[key] = value.strip()
     except:
         raise InvalidSaveDataError()
 
